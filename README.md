@@ -1,7 +1,7 @@
-# Build php-rev
-
-docker build -t php-rev .
-
 # run application
 
-docker-compose up
+`bash setup.sh`
+
+# Connect to database from host
+
+`mysql -u user -p -P 33061 -h 127.0.0.1`

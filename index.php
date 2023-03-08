@@ -20,13 +20,15 @@
 
 		<input type="submit" name="submit" value="Register">
 	</form>
-	
+
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Include the PHPMailer library
-require 'vendor/autoload.php';
+// require 'vendor/autoload.php';
+
+require './vendor/autoload.php';
 
 // Handle form submission
 if(isset($_POST['submit'])) {
@@ -41,10 +43,10 @@ if(isset($_POST['submit'])) {
 
     try {
         // Establishing a connection to the MySQL database
-        $servername = "localhost";
-        $username = "myuser";
-        $password = "mypassword";
-        $dbname = "mydatabase";
+        $servername = "database";
+        $username = "user";
+        $password = "password";
+        $dbname = "registrations";
 
         $conn = mysqli_connect($servername, $username, $password, $dbname);
 

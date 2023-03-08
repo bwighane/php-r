@@ -7,13 +7,16 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-di
 RUN apk update
 RUN apk upgrade
 RUN apk add bash
+
 RUN alias composer='php /usr/bin/composer'
 
 COPY . /var/www/html/
+
 WORKDIR /var/www/html/
 
-RUN composer update --no-scripts 
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
-RUN composer dump-autoload
+RUN composer dump-autoload 
 
 RUN composer install
+

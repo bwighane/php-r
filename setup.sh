@@ -1,0 +1,1 @@
+docker build -t php-rev . && docker-compose up
